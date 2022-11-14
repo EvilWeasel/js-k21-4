@@ -5,18 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
+  <style>
+    div {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Wenn man ein Form schicken möchte, erfolgt das i.d.R per POST request. Für dieses Beispiel nutzen wir den GET request, da der Webbrowser nur GET requests darstellen kann. -->
   <form action="results.html" method="GET">
     <div>
-      <label>Username</label>
+      <label for="username">Username</label>
       <input name="username" id="username">
     </div>
     <div>
-      <label for="password">Password</label>
-      <input name="password" id="password">
+      <label>
+        Password
+        <input type="password" name="password" id="password">
+      </label>
     </div>
-    <button type="submit">Submit</button>
+    <div>
+      <button type="reset" style="background-color: orange;">Reset</button>
+      <button type="submit" style="background-color: aqua;">Submit</button>
+    </div>
   </form>
 </body>
 </html>
