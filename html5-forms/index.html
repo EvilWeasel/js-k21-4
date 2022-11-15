@@ -10,14 +10,22 @@
       margin-top: 10px;
     }
     form {
-      width: 300px;
+      width: 500px;
     }
     input {
-      width: 100%;
+      width: 70%;
+    }
+    #abc::after {
+      content: 'km';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 15px;
     }
   </style>
 </head>
 <body>
+  <h1 id="abc">Formular</h1>
   <!-- Wenn man ein Form schicken möchte, erfolgt das i.d.R per POST request. Für dieses Beispiel nutzen wir den GET request, da der Webbrowser nur GET requests darstellen kann. -->
   <form action="results.html" method="GET" enctype="multipart/form-data">
     <div>
@@ -67,14 +75,19 @@
       </div>
     </div>
     <div>
-      <label for="male">Male</label>
-      <input type="radio" name="gender" id="male" value="male">
-      <label for="female">Female</label>
-      <input type="radio" name="gender" id="female" value="female">
+      <div>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male">
+      </div>
+      <div>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+      </div>
     </div>
     <div>
       <label for="eyeColor">Eye Color</label>
-      <select name="eyeColor" id="eyeColor" multiple>
+      <select name="eyeColor" id="eyeColor">
+        <option value="" hidden disabled></option>
         <option value="green">Green</option>
         <option value="blue">Blue</option>
         <option value="brown">Brown</option>
@@ -83,12 +96,32 @@
     </div>
     <div>
       <label for="bio">Bio</label>
-      <textarea name="bio" id="bio" rows="10" cols="20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ipsum tenetur nostrum porro culpa veniam quam eveniet tempore consequatur inventore?</textarea>
+      <textarea name="bio"
+      id="bio"
+      rows="10"
+      cols="20"
+      placeholder="abc"></textarea>
     </div>
     <input type="hidden" name="hidden" value="101">
     <div>
       <label for="file">File</label>
       <input type="file" id="file" name="file">
+    </div>
+    <div>
+      <label for="kilometer">Kilometer</label>
+      <input type="number"
+      placeholder="gefahrene Kilometer"
+      name="kilometer"
+      id="kilometer">
+      <p style="display: inline;">km</p>
+    </div>
+    <div>
+      <label for="month">Month</label>
+      <input type="month" 
+      id="month" 
+      name="month"
+      min="2022-01"
+      max="2022-12">
     </div>
     <div>
       <button type="reset" style="background-color: orange;">Reset</button>

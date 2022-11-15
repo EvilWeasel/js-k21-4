@@ -62,6 +62,8 @@ Die aktuelle Version des Repo lokal vom Remote runterladen: `git pull`
 
 ## Markdown Notes
 
+[Markdown Cheat-Sheet](https://www.markdownguide.org/cheat-sheet/)
+
 Dateien mit der Endung `.MD` sind sogenannte Markdown-Dateien. Sie sind Text-Dateien, in denen wir den Text mit speziellen Symbolen *hervorheben* können, ähnlich wie in einem Word Dokument.
 
 Während die Formatierung in Word allerdings versteckt ist und nur über Button oder Shortcuts in der App funktioniert, schreiben wir die Formatierung in Markdown selbst mit.
