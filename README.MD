@@ -7,6 +7,34 @@
 3. Navigieren Sie in den Ordner mit `cd <Ordnername>`.
 4. Öffnen Sie VSCode im aktuellen Verzeichnis mit `code .`.
 
+## Random IHK Notes
+
+Subnetting Aufgabe: 192.10.10.0/24
+
+1. 100
+2. 50
+3. 50
+4. 10
+
+## Aufgabe 15.11.22 a)
+
+Erstellen Sie ein Formular, für eine Autoverkauf. Dort soll der Kunde sein Auto mit allen relevanten Daten eingeben können,
+worauf der Händler dem Kunden ein Angebot zuschicken kann.
+
+
+### Wichtige Themenbereiche (HN-Kammer)
+
+1. IPV4
+2. IPV6 (und besonderst umrechnungen)
+3. Projektmanagent (Wasserfalldiagramm, Netzplan, Stakeholder, Risikoanalyse)
+4. Handelskalkulation
+5. Produktvergleiche (Kosten-Nutzen)
+6. UML
+7. Pseudocode
+8. DSGVO
+9. SQL
+
+
 ## HTML Notes
 
 HTML ist eine textbasierte Auszeichnungssprache, also Text mit *Strukturelementen*, die steuern, wie der Anzuzeigende Text vom Webbrowser gerendert (dargestellt) wird. Zusätzlich können HTML-Dokumente Metainformationen über den Text haben (Autor, Zusammenfassung, Tags,...).
