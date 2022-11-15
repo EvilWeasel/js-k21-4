@@ -16,10 +16,25 @@ Subnetting Aufgabe: 192.10.10.0/24
 3. 50
 4. 10
 
-## Aufgabe 15.11.22 a)
+## Aufgabe 
+
+### HTML
+
+#### Aufgabe 1
 
 Erstellen Sie ein Formular, für eine Autoverkauf. Dort soll der Kunde sein Auto mit allen relevanten Daten eingeben können,
 worauf der Händler dem Kunden ein Angebot zuschicken kann.
+
+### Javascript
+
+#### Aufgabe 1
+
+Schreiben Sie Programm, dass nacheinander von 1 bis 100 in der Konsole ausgibt.
+Dabei sollen aber folgende Regeln beachtet werden:
+
+1. Ist die Zahl ein Vielfaches von 3, dann soll anstatt der Zahl "Fizz" ausgegeben werden.
+2. Ist die Zahl ein Vielfaches von 5, dann soll anstatt der Zahl "Buzz" ausgegeben werden.
+3. Ist die Zahl ein Vielfaches von 3 UND 5, dann soll anstatt der Zahl "FizzBuzz" ausgegeben werden.
 
 
 ### Wichtige Themenbereiche (HN-Kammer)
@@ -42,6 +57,26 @@ HTML ist eine textbasierte Auszeichnungssprache, also Text mit *Strukturelemente
 ## CSS Notes
 
 ## JavaScript Notes
+
+### Nützliche Ressourcen
+
+[mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)
+[w3schools](https://www.w3schools.com/js/default.asp)
+[js-learning-collection | github.com](https://github.com/snipcart/learn-vanilla-js)
+
+### JS Primitive Types
+
+| Type      | typeof return value | Object wrapper |
+| --------- | ------------------- | -------------- |
+| Null      | "object"            | N/A            |
+| Undefined | "undefined"         | N/A            |
+| Boolean   | "boolean"           | Boolean        |
+| Number    | "number"            | Number         |
+| BigInt    | "bigint"            | BigInt         |
+| String    | "string"            | String         |
+| Symbol    | "symbol"            | Symbol         |
+
+
 
 ## Git Notes
 
