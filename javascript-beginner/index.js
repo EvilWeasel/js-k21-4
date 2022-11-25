@@ -1,23 +1,26 @@
 let username = "Tobias Wehrle";
+username = 24;
 const alter = 24;
 //var x = 10;
 
 console.log(username, alter);
 
 
+// Das Keyword "var" hat function-scope => ist gültig in der gesamten funktion.
 /* var x = 1;
-
+let y = "def";
 console.log(x);
 
 if (x === 1) {
   var x = 2;
+  let test = "abc";
   console.log(x);
 }
-
-console.log(x); */
+console.log(test);
+console.log(x) */;
 
 // Ich bin ein ein-zeilen comment // strg+shift+p
-
+const oma = 24;
 /*
   Ich bin ein multi-line-comment ^^
 
@@ -25,6 +28,16 @@ console.log(x); */
 
   undso...
 */
+  
+// Beispiel für Block-Scope
+let a = "Buxtehude";
+{
+  let a = 10;
+  let erg = a * 2;
+  console.log(erg);
+}
+
+
 
 console.log(window.location)
 
@@ -42,6 +55,7 @@ console.log(foo);
 // console.log(window);
 
 let myBoolean = true;
+// Python Boolean => myBoolean = True | False
 myBoolean = false;
 // myBoolean = "ABC";
 
@@ -55,10 +69,11 @@ console.log(maxInt);
 
 let myBigInt = Number.MAX_SAFE_INTEGER + Number.MAX_SAFE_INTEGER;
 let myOtherBigint = 11n;
+// C# => var x = 42.42f;
 console.log(myBigInt);
 
 let myString = "Hello World!";
-myString = 'Abc';
+myString = 'Abc'; // Strings sind immutable!
 myString = 'Und ich sage: "Feierabend"';
 let myIntString = `Hallo, mein name ist ${username}`;
 console.log(myString);
@@ -73,10 +88,12 @@ let myUndefined = undefined;
 
 let myObj = {};
 // myObj = Object;
+// JavaScript Object Syntax
 let myPerson = {
   name: "John",
   age: 42
 }
+// JSON Syntax
 let myPersonJson = {
   "name": "John",
   "age": 42
