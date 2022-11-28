@@ -107,6 +107,7 @@ console.log(numbers);
 /* in der sort function
   let res = compareNums(10,5); // => 5
 */
+//numbers.sort();
 numbers.sort((a, b) => a - b);
 //numbers.sort(function(a,b) { return a - b })
 console.log(numbers);
@@ -114,15 +115,36 @@ console.log(numbers);
 const carsUnsortedElem = document.getElementById('carsUnsorted');
 const carsSortedElem = document.getElementById('carsSorted');
 
-const carObjects = [
-  {type: "Volvo", year: 2022},
-  {type: "Skoda", year: 2018},
-  {type: "Audi", year: 2023},
-  {type: "VW", year: 2019}
-]
+function Cars() {
+  this.carsList = [
+    {type: "Volvo", year: 2022},
+    {type: "Skoda", year: 2018},
+    {type: "Audi", year: 2023},
+    {type: "VW", year: 2019}
+  ];
+}
+
+Cars.prototype.toString = function carsToString() {
+  let output = "";
+  this.carsList.forEach(item => {
+    output += `Type: ${item.type}; Year: ${item.year}\n`;
+  });
+  return output;
+}
+
+const carObjects = new Cars();
+
+// const carObjects = [
+//   {type: "Volvo", year: 2022},
+//   {type: "Skoda", year: 2018},
+//   {type: "Audi", year: 2023},
+//   {type: "VW", year: 2019}
+// ]
 
 carsUnsortedElem.innerHTML = carObjects;
 
-carObjects.sort((carA, carB) => carA.year - carB.year);
+//carObjects.sort((carA, carB) => carA.year - carB.year);
 
 carsSortedElem.innerHTML = carObjects;
+
+console.log(carObjects.toString());
