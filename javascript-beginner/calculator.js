@@ -34,6 +34,18 @@ class Calculator {
   // delete
 
   // append number
+  appendNumber(number) {
+    if (number === '.' && this.currentOperand.includes('.')) return;
+    if (this.currentOperand[0] === '0' &&
+    number !== '.' &&
+    !this.currentOperand.includes('.')) {
+      this.currentOperand = number;
+    } else {
+      this.currentOperand = this.currentOperand.toString() + number.toString();
+    }
+    this.updateDisplay();
+    // array.push()
+  }
 
   // choose operation
 
@@ -52,4 +64,10 @@ const calculator = new Calculator(previousOperandElem, currentOperandElem);
 
 clearButton.addEventListener('click', () => {
   calculator.clear();
+});
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.appendNumber(button.innerText);
+  });
 });

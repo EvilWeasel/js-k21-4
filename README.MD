@@ -77,6 +77,17 @@ Grundlegende Begriffe und deren Bedeutung sollten bekannt sein. Darunter fallen 
 [w3schools](https://www.w3schools.com/js/default.asp)
 [js-learning-collection | github.com](https://github.com/snipcart/learn-vanilla-js)
 
+### Equality-Checks
+
+```javascript
+= // => assignment operator
+== // => equals
+=== // => strict-equality
+
+!= // => not-equals
+!== // => not-strictly-equals
+```
+
 ### JS Primitive Types
 
 | Type      | typeof return value | Object wrapper |
@@ -89,7 +100,64 @@ Grundlegende Begriffe und deren Bedeutung sollten bekannt sein. Darunter fallen 
 | String    | "string"            | String         |
 | Symbol    | "symbol"            | Symbol         |
 
+### JavaScript Klassen
 
+Klassen sind templates um Objekte zu erstellen. Sie kapseln Daten mit entsprechenden Code.
+
+In JavaScript sind Klassen *nur* `syntaktischer Zucker` für Prototypen, was aber für die Funktion unserer App nicht *so* wichtig ist.
+
+#### Klassendeklaration
+
+```javascript
+const x = new Rectangle();// ⛔ Reference Error
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+const y = new Rectangle(); // ✅ Funktioniert
+```
+
+> Achtung: Klassendeklarationen werden nicht "gehoisted"
+> ==> Deklaration **muss** vor der Instanzierung stehen!
+
+Außerdem wichtig zu wissen:
+
+- Pro Klasse kann es nur **einen** Konstruktor geben.
+- Im Konstruktor kann das `super` keyword verwendet werden, um den Konstruktor des Parent (wenn vorhanden) aufzurufen.
+- Mit dem `static` keyword können staische Methoden oder Eigenschaften definiert werden. Diese sind **nur** über die Klasse, und **nicht** über die Instanz aufrufbar
+
+#### Static
+
+Quelle: [MDN | Static methods and properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#static_methods_and_properties)
+
+```javascript
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static displayName = "Point";
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.hypot(dx, dy);
+  }
+}
+
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
+p1.displayName; // undefined
+p1.distance;    // undefined
+p2.displayName; // undefined
+p2.distance;    // undefined
+
+console.log(Point.displayName);      // "Point"
+console.log(Point.distance(p1, p2)); // 7.0710678118654755
+```
 
 ## Git Notes
 
