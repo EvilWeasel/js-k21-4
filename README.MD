@@ -37,7 +37,7 @@ Dabei sollen aber folgende Regeln beachtet werden:
 3. Ist die Zahl ein Vielfaches von 3 UND 5, dann soll anstatt der Zahl "FizzBuzz" ausgegeben werden.
 
 
-### Wichtige Themenbereiche (HN-Kammer)
+## Wichtige Themenbereiche (HN-Kammer)
 
 1. IPV4
 2. IPV6 (und besonderst umrechnungen)
@@ -54,7 +54,20 @@ Dabei sollen aber folgende Regeln beachtet werden:
 
 HTML ist eine textbasierte Auszeichnungssprache, also Text mit *Strukturelementen*, die steuern, wie der Anzuzeigende Text vom Webbrowser gerendert (dargestellt) wird. Zusätzlich können HTML-Dokumente Metainformationen über den Text haben (Autor, Zusammenfassung, Tags,...).
 
+### HTML5 Neuerungen
+
+Diese müssen nicht unbedingt alle bekannt sein, aber einige davon *könnten* von der IHK abgefragt werden.
+
+[HTML5 Neuerungen | as-computer.de](https://www.as-computer.de/wissen/neue-html5-tags/)
+
+
 ## CSS Notes
+
+Grundlegende Begriffe und deren Bedeutung sollten bekannt sein. Darunter fallen z.B.:
+
+- Selektoren (e.g. element, class, id, attribute)
+- Regeln (e.g. font-size, font-family, display,...)
+- Unterschiede zwischen den Einheiten (relativ (vw/%/rem) vs absolut (px))
 
 ## JavaScript Notes
 
