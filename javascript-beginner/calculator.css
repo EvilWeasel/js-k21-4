@@ -1,0 +1,46 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/* body {
+  height: fit-content;
+} */
+
+.calculator-grid {
+  display: grid;
+
+  justify-content: center;
+  align-content: center;
+
+  min-height: 100vh;
+  min-width: 100vw;
+
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 100px);
+
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: span 4;
+  background-color: rgba(0,0,0,.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+}
+
+.previous-operand {
+  font-size: 18px;
+  color: lightgrey;
+}
