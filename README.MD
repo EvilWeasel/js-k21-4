@@ -69,6 +69,10 @@ Grundlegende Begriffe und deren Bedeutung sollten bekannt sein. Darunter fallen 
 - Regeln (e.g. font-size, font-family, display,...)
 - Unterschiede zwischen den Einheiten (relativ (vw/%/rem) vs absolut (px))
 
+### Flexbox-CheatSheet
+
+[Flexbox-CheatSheet | css-tricks.com](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 ## JavaScript Notes
 
 ### Nützliche Ressourcen

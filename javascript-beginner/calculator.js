@@ -22,10 +22,12 @@ class Calculator {
   constructor(previousOperandElem, currentOperandElem) {
     this.previousOperandElem = previousOperandElem;
     this.currentOperandElem = currentOperandElem;
+    this.clear();
   }
 
   // clear
   clear() {
+    // this.result = false;
     this.previousOperand = '';
     this.currentOperand = '0';
     this.updateDisplay();
@@ -35,6 +37,7 @@ class Calculator {
 
   // append number
   appendNumber(number) {
+    // if (this.result) this.clear();
     if (number === '.' && this.currentOperand.includes('.')) return;
     if (this.currentOperand[0] === '0' &&
     number !== '.' &&
@@ -48,8 +51,39 @@ class Calculator {
   }
 
   // choose operation
+  chooseOperation(operation) {
+    // this.result = false;
+    this.operation = operation;
+    this.previousOperand = `${this.currentOperand} ${this.operation}`;
+    this.currentOperand = '0';
+    this.updateDisplay();
+  }
 
   // calculate
+  // watch whitespace
+  calculate() {
+    let result;
+    const previous = parseFloat(this.previousOperand.slice(0, -2));
+    const current = parseFloat(this.currentOperand);
+    switch (this.operation) {
+      case '+':
+        result = previous + current;
+        break;
+      case '-':
+        result = previous - current;
+        break;
+      case '*':
+        result = previous * current;
+        break;
+      case '/':
+        result = previous / current;
+        break;
+      default: return;
+    }
+    this.currentOperand = result;
+    //this.result = true;
+    this.updateDisplay();
+  }
 
   // update display
   updateDisplay() {
@@ -61,6 +95,10 @@ class Calculator {
 
 const calculator = new Calculator(previousOperandElem, currentOperandElem);
 
+equalsButton.addEventListener('click', () => {
+  calculator.calculate();
+});
+
 
 clearButton.addEventListener('click', () => {
   calculator.clear();
@@ -69,5 +107,11 @@ clearButton.addEventListener('click', () => {
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText);
+  });
+});
+
+operationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.chooseOperation(button.innerText);
   });
 });
