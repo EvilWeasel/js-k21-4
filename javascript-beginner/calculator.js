@@ -100,13 +100,30 @@ class Calculator {
     this.updateDisplay();
   }
 
-  // display-helper
+  // display-helper 
+  // string | number => string(formattiert)
   getDisplayNumber(number) {
     // Konvertierung von 0,5 in float schlägt fehl, deswegen wird der return ausgelöst.
-    const float = parseFloat(number);
-    if (isNaN(float)) return '';
+    //const float = parseFloat(number);
+    //if (isNaN(float)) return '';
     // Zeigt maximal 3 Nachkommastellen an.
-    return float.toLocaleString('en');
+    // return float.toLocaleString('en', {maximumSignificantDigits: 20, maximumFractionDigits: 16});
+    const stringNumber = number.toString();
+    const integerDigits = parseFloat(stringNumber.split('.')[0]);
+    const decimalDigits = stringNumber.split('.')[1];
+    let displayInt;
+    if (isNaN(integerDigits)) {
+      displayInt = '';
+    } else {
+      displayInt = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
+    }
+    if (decimalDigits != null) {
+      // C# Interpolated String $"{name} {age}";
+      return `${displayInt}.${decimalDigits}`;
+    }
+    else {
+      return displayInt;
+    }
   }
 
   // update display
