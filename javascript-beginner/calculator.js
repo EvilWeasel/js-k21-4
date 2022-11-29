@@ -34,6 +34,20 @@ class Calculator {
   }
 
   // delete
+  delete() {
+    if (this.currentOperand === '0') return;
+    this.currentOperand = this.currentOperand.slice(0, -1);
+    if (this.currentOperand.length === 0) {
+      this.currentOperand = '0';
+    }
+    this.updateDisplay();
+  }
+
+  // clear current
+  clearCurrent() {
+    this.currentOperand = '0';
+    this.updateDisplay();
+  }
 
   // append number
   appendNumber(number) {
@@ -45,6 +59,7 @@ class Calculator {
       this.currentOperand = number;
     } else {
       this.currentOperand = this.currentOperand.toString() + number.toString();
+      console.log(this.currentOperand);
     }
     this.updateDisplay();
     // array.push()
@@ -85,23 +100,38 @@ class Calculator {
     this.updateDisplay();
   }
 
+  // display-helper
+  getDisplayNumber(number) {
+    // Konvertierung von 0,5 in float schlägt fehl, deswegen wird der return ausgelöst.
+    const float = parseFloat(number);
+    if (isNaN(float)) return '';
+    // Zeigt maximal 3 Nachkommastellen an.
+    return float.toLocaleString('en');
+  }
+
   // update display
   updateDisplay() {
-    this.currentOperandElem.innerText = this.currentOperand;
-    this.previousOperandElem.innerText = this.previousOperand;
+    this.currentOperandElem.innerText = 
+      this.getDisplayNumber(this.currentOperand);
+    this.previousOperandElem.innerText = 
+      this.getDisplayNumber(this.previousOperand);
   }
 }
 
 
 const calculator = new Calculator(previousOperandElem, currentOperandElem);
+//console.log(0.1 + 0.2);
 
 equalsButton.addEventListener('click', () => {
   calculator.calculate();
 });
 
-
 clearButton.addEventListener('click', () => {
   calculator.clear();
+});
+
+deleteButton.addEventListener('click', () => {
+  calculator.delete();
 });
 
 numberButtons.forEach(button => {
