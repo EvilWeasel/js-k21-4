@@ -22,8 +22,9 @@
 );
 console.log(myList); */
 
-let person = new Person("Willy", 33);
-console.log(person);
+// Instanziierung einer Klasse ist (in JavaScript) erst NACH der Deklaration möglich!
+// let person = new Person("Willy", 33);
+// console.log(person);
 
 // Parent Class
 class Person {
@@ -73,6 +74,7 @@ class Teacher extends Person {
 let student1 = new Student("Jack", 32, 3);
 student1.greet();
 // console.log(student1.grade);
+// student1.#grade = 1;
 student1.grade = 1;
 console.log(student1.grade);
 console.log(student1);
